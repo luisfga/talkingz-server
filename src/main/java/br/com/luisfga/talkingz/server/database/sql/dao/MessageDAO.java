@@ -104,7 +104,9 @@ public class MessageDAO {
 
     @Transactional
     public void updateMessageStatus(UUID uuid, byte statusMsg){
+        logger.debug("Atualizando a mensagem " + uuid + " para o status " + statusMsg);
         Message message = em.find(Message.class, uuid);
+        logger.debug("Mensagem encontrada? " + (message != null));
         message.msgStatus = statusMsg;
         em.persist(message);
     }
