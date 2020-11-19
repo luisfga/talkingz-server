@@ -70,6 +70,7 @@ public class MessageDAO {
 
         Query findPendingMessages = em.createNamedQuery("Message.findPendingMessages");
         findPendingMessages.setParameter("destId", destId);
+        findPendingMessages.setParameter("statusOnTraffic", MessageStatus.MSG_STATUS_ON_TRAFFIC);
 
         List<Message> msgs = findPendingMessages.getResultList();
 
@@ -94,6 +95,7 @@ public class MessageDAO {
     public List<UUID> findPendingConfirmations(UUID senderId){
         Query findPendingConfirmations = em.createNamedQuery("Message.findPendingConfirmations");
         findPendingConfirmations.setParameter("senderId", senderId);
+        findPendingConfirmations.setParameter("statusDelivered",MessageStatus.MSG_STATUS_DELIVERED);
         return findPendingConfirmations.getResultList();
     }
 

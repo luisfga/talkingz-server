@@ -8,8 +8,8 @@ import java.util.UUID;
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "Message.findPendingMessages", query = "SELECT m FROM Message m WHERE m.destId = :destId AND m.msgStatus = "+ MessageStatus.MSG_STATUS_ON_TRAFFIC +" ORDER BY sentTime ASC"),
-        @NamedQuery(name = "Message.findPendingConfirmations", query = "SELECT m.id FROM Message m WHERE m.senderId = :senderId AND m.msgStatus = "+ MessageStatus.MSG_STATUS_DELIVERED +" ORDER BY sentTime ASC")
+        @NamedQuery(name = "Message.findPendingMessages", query = "SELECT m FROM Message m WHERE m.destId = :destId AND m.msgStatus = :statusOnTraffic  ORDER BY sentTime ASC"),
+        @NamedQuery(name = "Message.findPendingConfirmations", query = "SELECT m.id FROM Message m WHERE m.senderId = :senderId AND m.msgStatus = :statusDelivered  ORDER BY sentTime ASC")
 })
 public class Message {
     @Id
