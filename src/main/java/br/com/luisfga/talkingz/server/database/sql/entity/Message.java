@@ -1,7 +1,5 @@
 package br.com.luisfga.talkingz.server.database.sql.entity;
 
-import br.com.luisfga.talkingz.commons.MessageStatus;
-
 import javax.persistence.*;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -27,7 +25,7 @@ public class Message {
     public String content;
 
     @Column(name = "mime_type")
-    public short mimeType;
+    public byte mimeType;
 
     @Lob
     @Column(name = "media_thumbnail")
@@ -37,6 +35,6 @@ public class Message {
     public String mediaDownloadToken;
 
     @Column(name = "msg_status")
-    public short msgStatus;
+    public byte msgStatus;
 
 }

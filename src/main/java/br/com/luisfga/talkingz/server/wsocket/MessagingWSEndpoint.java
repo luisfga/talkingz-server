@@ -5,7 +5,7 @@ import br.com.luisfga.talkingz.server.database.sql.dao.MessageDAO;
 import br.com.luisfga.talkingz.server.database.sql.dao.UserDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import br.com.luisfga.talkingz.commons.MessageStatus;
+import br.com.luisfga.talkingz.commons.constants.MessageStatus;
 import br.com.luisfga.talkingz.commons.MessageWrapper;
 import br.com.luisfga.talkingz.commons.UserWrapper;
 import br.com.luisfga.talkingz.commons.orchestration.Orchestration;
