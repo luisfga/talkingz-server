@@ -1,0 +1,5 @@
+Versão do MySQL 8.0.19
+Senha do Root no ambiente Desenv: mysql123
+Usuário a ser usado: javauser
+Senha para javauser: javapass
+JDBCDriver: 'mysql:mysql-connector-java:5.1.47'
