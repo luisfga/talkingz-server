@@ -73,6 +73,7 @@ public class MessageDAO {
         findPendingMessages.setParameter("statusOnTraffic", MessageStatus.MSG_STATUS_ON_TRAFFIC);
 
         List<Message> msgs = findPendingMessages.getResultList();
+        logger.debug("Usuário com mensagens " + msgs.size()  + " pendentes ");
 
         msgs.forEach(msg -> {
                 MessageWrapper message = new MessageWrapper();
@@ -96,7 +97,9 @@ public class MessageDAO {
         Query findPendingConfirmations = em.createNamedQuery("Message.findPendingConfirmations");
         findPendingConfirmations.setParameter("senderId", senderId);
         findPendingConfirmations.setParameter("statusDelivered",MessageStatus.MSG_STATUS_DELIVERED);
-        return findPendingConfirmations.getResultList();
+        List<UUID> pendingConfirmations = findPendingConfirmations.getResultList();
+        logger.debug("Usuário com mensagens " + pendingConfirmations.size()  + " pendentes ");
+        return pendingConfirmations;
     }
 
     @Transactional
