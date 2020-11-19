@@ -15,7 +15,7 @@
 
   <groupId>br.com.luisfga</groupId>
   <artifactId>talkingz-server</artifactId>
-  <version>1.0</version>
+  <version>0.1</version>
 
   <properties>
     <compiler-plugin.version>3.8.1</compiler-plugin.version>
