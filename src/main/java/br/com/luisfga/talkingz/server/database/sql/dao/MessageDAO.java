@@ -106,6 +106,6 @@ public class MessageDAO {
     public void updateMessageStatus(UUID uuid, byte statusMsg){
         Message message = em.find(Message.class, uuid);
         message.msgStatus = statusMsg;
-        em.merge(message);
+        em.persist(message);
     }
 }
