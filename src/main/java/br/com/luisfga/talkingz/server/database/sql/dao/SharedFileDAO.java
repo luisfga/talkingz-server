@@ -1,4 +1,4 @@
-package br.com.luisfga.talkingzapp.server.database.sql.dao;
+package br.com.luisfga.talkingz.server.database.sql.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import io.agroal.api.AgroalDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import br.com.luisfga.talkingzapp.common.utils.SharedFileDTO;
+import br.com.luisfga.talkingz.commons.utils.SharedFileDTO;
 
 import javax.inject.Inject;
 

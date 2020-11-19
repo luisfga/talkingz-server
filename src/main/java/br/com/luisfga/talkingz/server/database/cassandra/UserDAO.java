@@ -3,12 +3,12 @@
 // * To change this template file, choose Tools | Templates
 // * and open the template in the editor.
 // */
-//package br.com.luisfga.talkingzapp.server.database.cassandra;
+//package br.com.luisfga.talkingz.server.database.cassandra;
 //
 //import com.datastax.oss.driver.api.core.CqlSession;
 //import com.datastax.oss.driver.api.core.cql.BoundStatement;
 //import com.datastax.oss.driver.api.core.cql.PreparedStatement;
-//import br.com.luisfga.talkingzapp.common.UserWrapper;
+//import br.com.luisfga.talkingz.commons.UserWrapper;
 //
 //import java.net.InetSocketAddress;
 //import java.nio.ByteBuffer;

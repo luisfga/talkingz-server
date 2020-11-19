@@ -1,6 +1,6 @@
-package br.com.luisfga.talkingzapp.server.database.sql.entity;
+package br.com.luisfga.talkingz.server.database.sql.entity;
 
-import br.com.luisfga.talkingzapp.common.MessageStatus;
+import br.com.luisfga.talkingz.commons.MessageStatus;
 
 import javax.persistence.*;
 import java.time.OffsetDateTime;

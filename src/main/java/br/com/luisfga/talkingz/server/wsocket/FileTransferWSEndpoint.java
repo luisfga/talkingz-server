@@ -1,4 +1,4 @@
-package br.com.luisfga.talkingzapp.server.wsocket;
+package br.com.luisfga.talkingz.server.wsocket;
 
 import java.io.EOFException;
 import java.nio.ByteBuffer;
@@ -13,16 +13,16 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
-import br.com.luisfga.talkingzapp.server.database.sql.dao.SharedFileDAO;
+import br.com.luisfga.talkingz.server.database.sql.dao.SharedFileDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import br.com.luisfga.talkingzapp.common.orchestration.Orchestration;
-import br.com.luisfga.talkingzapp.common.orchestration.OrchestrationEncoder;
-import br.com.luisfga.talkingzapp.common.orchestration.OrchestrationDecoder;
-import br.com.luisfga.talkingzapp.common.orchestration.response.CommandGetFile;
-import br.com.luisfga.talkingzapp.common.orchestration.response.ResponseCommandGetFile;
-import br.com.luisfga.talkingzapp.common.utils.SharedFileDTO;
-import br.com.luisfga.talkingzapp.common.utils.TransferUtility;
+import br.com.luisfga.talkingz.commons.orchestration.Orchestration;
+import br.com.luisfga.talkingz.commons.orchestration.OrchestrationEncoder;
+import br.com.luisfga.talkingz.commons.orchestration.OrchestrationDecoder;
+import br.com.luisfga.talkingz.commons.orchestration.response.CommandGetFile;
+import br.com.luisfga.talkingz.commons.orchestration.response.ResponseCommandGetFile;
+import br.com.luisfga.talkingz.commons.utils.SharedFileDTO;
+import br.com.luisfga.talkingz.commons.utils.TransferUtility;
 
 /**
  *

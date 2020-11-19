@@ -3,10 +3,10 @@
 // * To change this template file, choose Tools | Templates
 // * and open the template in the editor.
 // */
-//package br.com.luisfga.talkingzapp.server.database.cassandra;
+//package br.com.luisfga.talkingz.server.database.cassandra;
 //
-//import br.com.luisfga.talkingzapp.common.MessageWrapper;
-//import br.com.luisfga.talkingzapp.common.orchestration.command.CommandSend;
+//import br.com.luisfga.talkingz.commons.MessageWrapper;
+//import br.com.luisfga.talkingz.commons.orchestration.command.CommandSend;
 //
 //import javax.enterprise.context.ApplicationScoped;
 //import java.util.ArrayList;

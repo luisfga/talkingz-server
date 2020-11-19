@@ -7,11 +7,11 @@
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile.native -t quarkus/talkingzapp-server .
+# docker build -f src/main/docker/Dockerfile.native -t quarkus/talkingz-server .
 #
 # Then run the container using:
 #
-# docker run -i --rm -p 8080:8080 quarkus/talkingzapp-server
+# docker run -i --rm -p 8080:8080 quarkus/talkingz-server
 #
 ###
 FROM registry.access.redhat.com/ubi8/ubi-minimal:8.1

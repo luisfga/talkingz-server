@@ -3,7 +3,7 @@
 // * To change this template file, choose Tools | Templates
 // * and open the template in the editor.
 // */
-//package br.com.luisfga.talkingzapp.server.database.cassandra;
+//package br.com.luisfga.talkingz.server.database.cassandra;
 //
 //import com.datastax.oss.driver.api.core.CqlIdentifier;
 //import com.datastax.oss.driver.api.core.CqlSession;
@@ -16,7 +16,7 @@
 //
 //    public static CqlSession getCassandraSession() {
 //
-//        return CqlSession.builder().withKeyspace(CqlIdentifier.fromCql("br/com/luisfga/talkingzapp")).build();
+//        return CqlSession.builder().withKeyspace(CqlIdentifier.fromCql("br/com/luisfga/talkingz")).build();
 //
 //    }
 //

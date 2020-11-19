@@ -1,18 +1,18 @@
-package br.com.luisfga.talkingzapp.server.wsocket;
+package br.com.luisfga.talkingz.server.wsocket;
 
-import br.com.luisfga.talkingzapp.common.orchestration.command.*;
-import br.com.luisfga.talkingzapp.server.database.sql.dao.MessageDAO;
-import br.com.luisfga.talkingzapp.server.database.sql.dao.UserDAO;
+import br.com.luisfga.talkingz.commons.orchestration.command.*;
+import br.com.luisfga.talkingz.server.database.sql.dao.MessageDAO;
+import br.com.luisfga.talkingz.server.database.sql.dao.UserDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import br.com.luisfga.talkingzapp.common.MessageStatus;
-import br.com.luisfga.talkingzapp.common.MessageWrapper;
-import br.com.luisfga.talkingzapp.common.UserWrapper;
-import br.com.luisfga.talkingzapp.common.orchestration.Orchestration;
-import br.com.luisfga.talkingzapp.common.orchestration.OrchestrationDecoder;
-import br.com.luisfga.talkingzapp.common.orchestration.OrchestrationEncoder;
-import br.com.luisfga.talkingzapp.common.orchestration.response.CommandFindContact;
-import br.com.luisfga.talkingzapp.common.orchestration.response.ResponseCommandFindContact;
+import br.com.luisfga.talkingz.commons.MessageStatus;
+import br.com.luisfga.talkingz.commons.MessageWrapper;
+import br.com.luisfga.talkingz.commons.UserWrapper;
+import br.com.luisfga.talkingz.commons.orchestration.Orchestration;
+import br.com.luisfga.talkingz.commons.orchestration.OrchestrationDecoder;
+import br.com.luisfga.talkingz.commons.orchestration.OrchestrationEncoder;
+import br.com.luisfga.talkingz.commons.orchestration.response.CommandFindContact;
+import br.com.luisfga.talkingz.commons.orchestration.response.ResponseCommandFindContact;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

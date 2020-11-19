@@ -14,7 +14,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>br.com.luisfga</groupId>
-  <artifactId>talkingzapp-server</artifactId>
+  <artifactId>talkingz-server</artifactId>
   <version>1.0</version>
 
   <properties>
@@ -46,8 +46,8 @@
   <dependencies>
     <dependency>
       <groupId>br.com.luisfga</groupId>
-      <artifactId>talkingzapp-commons</artifactId>
-      <version>1.0</version>
+      <artifactId>talkingz-commons</artifactId>
+      <version>0.1</version>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>

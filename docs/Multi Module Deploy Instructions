@@ -1,3 +1,3 @@
 --Windows
 
-deploy:deploy-file -Durl=file:///{pathToDestProject}\repo -Dfile=talkingzapp-commons-1.0.jar -DgroupId=br.com.luisfga -DartifactId=talkingzapp-commons -Dpackaging=jar -Dversion=1.0
+É preciso instalar na pasta 'repo' o jar do talkingz-commons a partir do projeto 'talkingz-commons'
