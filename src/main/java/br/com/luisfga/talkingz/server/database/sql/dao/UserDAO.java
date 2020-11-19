@@ -41,12 +41,12 @@ public class UserDAO {
             AppUser user = (AppUser) findByToken.getSingleResult();
 
             UserWrapper userWrapper = new UserWrapper();
-            userWrapper.setId(user.id);
-            userWrapper.setName(user.userName);
-            userWrapper.setThumbnail(user.thumbnail);
-            userWrapper.setEmail(user.email);
-            userWrapper.setJoinTime(user.joinTime.toInstant().toEpochMilli());
-            userWrapper.setSearchToken(user.searchToken);
+            userWrapper.setId(user.getId());
+            userWrapper.setName(user.getUserName());
+            userWrapper.setThumbnail(user.getThumbnail());
+            userWrapper.setEmail(user.getEmail());
+            userWrapper.setJoinTime(user.getJoinTime().toInstant().toEpochMilli());
+            userWrapper.setSearchToken(user.getSearchToken());
 
             return userWrapper;
 
@@ -65,20 +65,20 @@ public class UserDAO {
         AppUser user = null;
         try {
             user = (AppUser) findById.getSingleResult();
-            user.userName = userWrapper.getName();
-            user.thumbnail = userWrapper.getThumbnail();
-            user.email = userWrapper.getEmail();
-            user.searchToken = userWrapper.getSearchToken();
+            user.setUserName(userWrapper.getName());
+            user.setThumbnail(userWrapper.getThumbnail());
+            user.setEmail(userWrapper.getEmail());
+            user.setSearchToken(userWrapper.getSearchToken());
 
         } catch (NoResultException nre){
             user = new AppUser();
 
-            user.id = userWrapper.getId();
-            user.userName = userWrapper.getName();
-            user.thumbnail = userWrapper.getThumbnail();
-            user.email = userWrapper.getEmail();
-            user.searchToken = userWrapper.getSearchToken();
-            user.joinTime = OffsetDateTime.ofInstant(new java.util.Date(userWrapper.getJoinTime()).toInstant(), ZoneId.systemDefault());
+            user.setId(userWrapper.getId());
+            user.setUserName(userWrapper.getName());
+            user.setThumbnail(userWrapper.getThumbnail());
+            user.setEmail(userWrapper.getEmail());
+            user.setSearchToken(userWrapper.getSearchToken());
+            user.setJoinTime(OffsetDateTime.ofInstant(new java.util.Date(userWrapper.getJoinTime()).toInstant(), ZoneId.systemDefault()));
         } finally {
             em.persist(user);
         }

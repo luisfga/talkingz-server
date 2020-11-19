@@ -11,30 +11,101 @@ import java.util.UUID;
 })
 public class Message {
     @Id
-    public UUID id;
+    private UUID id;
 
     @Column(name = "sender_id")
-    public UUID senderId;
+    private UUID senderId;
 
     @Column(name = "dest_id")
-    public UUID destId;
+    private UUID destId;
 
     @Column(name = "sent_time")
-    public OffsetDateTime sentTime;
+    private OffsetDateTime sentTime;
 
-    public String content;
+    private String content;
 
     @Column(name = "mime_type")
-    public byte mimeType;
+    private byte mimeType;
 
     @Lob
     @Column(name = "media_thumbnail")
-    public byte[] mediaThumbnail;
+    private byte[] mediaThumbnail;
 
     @Column(name = "media_download_token")
-    public String mediaDownloadToken;
+    private String mediaDownloadToken;
 
     @Column(name = "msg_status")
-    public byte msgStatus;
+    private byte msgStatus;
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public UUID getSenderId() {
+        return senderId;
+    }
+
+    public void setSenderId(UUID senderId) {
+        this.senderId = senderId;
+    }
+
+    public UUID getDestId() {
+        return destId;
+    }
+
+    public void setDestId(UUID destId) {
+        this.destId = destId;
+    }
+
+    public OffsetDateTime getSentTime() {
+        return sentTime;
+    }
+
+    public void setSentTime(OffsetDateTime sentTime) {
+        this.sentTime = sentTime;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public byte getMimeType() {
+        return mimeType;
+    }
+
+    public void setMimeType(byte mimeType) {
+        this.mimeType = mimeType;
+    }
+
+    public byte[] getMediaThumbnail() {
+        return mediaThumbnail;
+    }
+
+    public void setMediaThumbnail(byte[] mediaThumbnail) {
+        this.mediaThumbnail = mediaThumbnail;
+    }
+
+    public String getMediaDownloadToken() {
+        return mediaDownloadToken;
+    }
+
+    public void setMediaDownloadToken(String mediaDownloadToken) {
+        this.mediaDownloadToken = mediaDownloadToken;
+    }
+
+    public byte getMsgStatus() {
+        return msgStatus;
+    }
+
+    public void setMsgStatus(byte msgStatus) {
+        this.msgStatus = msgStatus;
+    }
 }

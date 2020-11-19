@@ -42,17 +42,17 @@ public class MessageDAO {
         try {
             Message message = new Message();
 
-            message.id = cmdSend.getMessageWrapper().getId();
-            message.senderId = UUID.fromString(cmdSend.getMessageWrapper().getSenderId());
-            message.destId = UUID.fromString(cmdSend.getMessageWrapper().getDestId());
+            message.setId(cmdSend.getMessageWrapper().getId());
+            message.setSenderId(UUID.fromString(cmdSend.getMessageWrapper().getSenderId()));
+            message.setDestId(UUID.fromString(cmdSend.getMessageWrapper().getDestId()));
 
-            message.sentTime = OffsetDateTime.ofInstant(new Date(cmdSend.getMessageWrapper().getSentTimeInMilis()).toInstant(), ZoneId.systemDefault());
+            message.setSentTime(OffsetDateTime.ofInstant(new Date(cmdSend.getMessageWrapper().getSentTimeInMilis()).toInstant(), ZoneId.systemDefault()));
 
-            message.content = cmdSend.getMessageWrapper().getContent();
-            message.mimeType = cmdSend.getMessageWrapper().getMimetype();
-            message.mediaThumbnail = cmdSend.getMessageWrapper().getMediaThumbnail();
-            message.mediaDownloadToken = cmdSend.getMessageWrapper().getDownloadToken();
-            message.msgStatus = MessageStatus.MSG_STATUS_ON_TRAFFIC;
+            message.setContent(cmdSend.getMessageWrapper().getContent());
+            message.setMimeType(cmdSend.getMessageWrapper().getMimetype());
+            message.setMediaThumbnail(cmdSend.getMessageWrapper().getMediaThumbnail());
+            message.setMediaDownloadToken(cmdSend.getMessageWrapper().getDownloadToken());
+            message.setMsgStatus(MessageStatus.MSG_STATUS_ON_TRAFFIC);
 
             em.persist(message);
 
@@ -77,15 +77,15 @@ public class MessageDAO {
 
         msgs.forEach(msg -> {
                 MessageWrapper message = new MessageWrapper();
-                message.setId(msg.id);
-                message.setSenderId(msg.senderId.toString());
-                message.setDestId(msg.destId.toString());
-                message.setSentTimeInMilis(msg.sentTime.toInstant().toEpochMilli());
-                message.setMimetype((byte)msg.mimeType);
-                message.setContent(msg.content);
-                message.setMediaThumbnail(msg.mediaThumbnail);
-                message.setDownloadToken(msg.mediaDownloadToken);
-                message.setStatus(msg.msgStatus);
+                message.setId(msg.getId());
+                message.setSenderId(msg.getSenderId().toString());
+                message.setDestId(msg.getDestId().toString());
+                message.setSentTimeInMilis(msg.getSentTime().toInstant().toEpochMilli());
+                message.setMimetype((byte)msg.getMimeType());
+                message.setContent(msg.getContent());
+                message.setMediaThumbnail(msg.getMediaThumbnail());
+                message.setDownloadToken(msg.getMediaDownloadToken());
+                message.setStatus(msg.getMsgStatus());
                 logger.debug("Mensagem pendente encontrada (uuid:"+message.getId()+")");
                 pendingMessages.add(message);
         });
@@ -107,7 +107,7 @@ public class MessageDAO {
         logger.debug("Atualizando a mensagem " + uuid + " para o status " + statusMsg);
         Message message = em.find(Message.class, uuid);
         logger.debug("Mensagem encontrada? " + (message != null));
-        message.msgStatus = statusMsg;
+        message.setMsgStatus(statusMsg);
         em.persist(message);
     }
 }

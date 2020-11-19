@@ -16,16 +16,71 @@ public class AppUser {
 
     @Id
     @Column(columnDefinition = "uuid")
-    public UUID id;
+    private UUID id;
     @Column(name = "user_name")
-    public String userName;
+    private String userName;
     @Lob
-    public byte[] thumbnail;
-    public String email;
+    private byte[] thumbnail;
+    private String email;
     @Column(name = "join_time")
-    public OffsetDateTime joinTime;
-    public String password;
+    private OffsetDateTime joinTime;
+    private String password;
     @Column(name = "search_token")
-    public String searchToken;
+    private String searchToken;
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public byte[] getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(byte[] thumbnail) {
+        this.thumbnail = thumbnail;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public OffsetDateTime getJoinTime() {
+        return joinTime;
+    }
+
+    public void setJoinTime(OffsetDateTime joinTime) {
+        this.joinTime = joinTime;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getSearchToken() {
+        return searchToken;
+    }
+
+    public void setSearchToken(String searchToken) {
+        this.searchToken = searchToken;
+    }
 }
