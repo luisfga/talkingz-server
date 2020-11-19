@@ -1,1 +1,1 @@
-web: java -jar talkingz-server-0.1-runner.jar -Dhttp.port=$PORT
+web: java -jar target/talkingz-server-0.1-runner.jar -Dhttp.port=$PORT
