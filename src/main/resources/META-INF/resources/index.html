@@ -6,241 +6,32 @@
     <title>Talkingz App v0.1.0</title>
     <link rel="shortcut icon" href="/favicon.png" type="image/png">
     <style>
-
         body {
             margin: 0;
             font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            margin-bottom: 0.5rem;
-            font-weight: 400;
-            line-height: 1.5;
-        }
+        .banner { line-height:15px; text-align:left; font-size: 2.7rem; background-color: white; color: #00A1E2; }
 
-        h1 {font-size: 2.5rem;}
-        h2 {font-size: 2rem}
-        h3 {font-size: 1.75rem}
-        h4 {font-size: 1.5rem}
-        h5 {font-size: 1.25rem}
-        h6 {font-size: 1rem}
+        .lead { font-size: 2rem; margin:0; }
 
-        .lead {
-            font-weight: 300;
-            font-size: 2rem;
-            margin:0;
-        }
+        .sublead { font-weight: 150; font-size: 1rem; line-height:20px }
 
-        .sublead {
-            font-weight: 150;
-            font-size: 1rem;
-            line-height:20px
-        }
+        .download-btn{width:100%;  margin-top:15px; border: #00A1E2 0.5px solid; border-radius: 5px; color: #00A1E2; font-size: 1.5rem; }
+        .download-btn:hover{ color: white; background-color:#00A1E2; cursor: pointer; }
 
-        .banner {
-            line-height:15px;
-            text-align:center;
-            font-size: 2.7rem;
-            margin: 0;
-            padding-top: 2rem;
-            background-color: #00A1E2;
-            color: white;
-        }
-
-        .floating-right {
-            margin-top:20px;
-            padding-top:20px;
-            color: #00A1E2;
-            background-color: white;
-        }
-
-        .download-btn{
-            margin-top:15px;
-            border:#00A1E2 2px solid;
-            border-radius: 5px;
-            color: #00A1E2;
-            font-size: 1.5rem;
-        }
-
-
-
-        body a{
-            color: #00A1E2;
-            text-decoration:none;
-        }
-
-        .left-column {
-            width: 100%;
-        }
-
-        .right-column {
-            width: 100%;
-        }
-
-        .container {
-            display: block;
-            padding-left:40px;
-            width: 90%;
-        }
-
-        li {
-            margin: 0.75rem;
-        }
-
-        .right-section {
-            width: 100%;
-        }
-
-        .right-section h3 {
-            padding-top: 0;
-            font-weight: 200;
-        }
-
-        .right-section ul {
-            border-left: 0.3rem solid #00A1E2;
-            list-style-type: none;
-            padding-left: 50px;;
-        }
-
-        @media only screen and (min-width: 768px) {
-
-            .banner {
-                line-height:15px;
-                text-align:left;
-                font-size: 2.7rem;
-                padding: 2rem;
-                background-color: #00A1E2;
-                color: white;
-            }
-
-            .lead {
-                font-size: 2rem;
-                margin:0;
-            }
-
-            .sublead {
-                font-weight: 150;
-                font-size: 1rem;
-                line-height:20px
-            }
-
-            .floating-right {
-                float: right;
-                margin-top:-65px;
-                color:white;
-                background-color:#00A1E2;
-            }
-
-            .download-btn{
-                width:100%;
-                margin-top:15px;
-                border: #ffffff 0.5px solid;
-                border-radius: 5px;
-                color: #00A1E2;
-                font-size: 1.5rem;
-            }
-
-            .container {
-                display: flex;
-                width: 90%;
-                margin-top:20px;
-            }
-
-            .left-column {
-                padding: .75rem;
-                padding-left: 50px;
-                max-width: 70%;
-                min-width: 55%;
-            }
-
-            .right-column {
-                padding: 0;
-                margin-top: 0;
-                max-width: 30%;
-            }
-
-            li {
-                margin: 0.75rem;
-            }
-
-            .right-section {
-            margin-top: 0;
-                padding-top: 0;
-                margin-left: 1rem;
-                padding-left: 0.5rem;
-                right: 0;
-                width: 100%;
-            }
-
-            .right-section h3 {
-                padding-top: 0;
-                margin-top: 10px;
-                font-weight: 200;
-            }
-
-            .right-section ul {
-                border-left: 0.3rem solid #00A1E2;
-                list-style-type: none;
-                padding-left: 0;
-            }
-        }
-
+        .container { display: flex; width: 100%; margin:20px; }
     </style>
 </head>
 <body>
-
-<div class="banner lead">
-    Talkingz App
-    <br><br>
-    <span class="sublead">rolling-0.1.0-beta</span>
-
-    <div class="sublead floating-right">Talk freely. Talk safe. Talk it easy.
-        <br>
-        <div style="text-align:center;">
-            <button class="download-btn">Download Now!</button>
-            <br><span style="font-size:12px; margin-top:0;color:red;"><b>(only for tests)</b></span>
+    <div class="container">
+        <div class="banner lead">
+            Talkingz App
+            <br><br>
+            <span class="sublead">0.1.0-beta</span><span style="font-size:12px; margin-top:0;color:red;">&nbsp;&nbsp;&nbsp;&nbsp;<b>(tests only - do it at your own risk)</b></span>
+            <br><button onclick="window.location.href='talkingz-app-0.1.0.apk';" class="download-btn">Download</button>
+            <br>
         </div>
     </div>
-
-</div>
-
-
-
-<div class="container">
-    <div class="left-column">
-        <p class="lead">What is this app about?</p>
-
-        <p>Talking, sharing, meeting, voice and video calls.</p>
-
-        <p class="lead">So, what is the current status of the project?</p>
-
-        <p>Currently just testing a very first beta version with the core messaging system.</p>
-        <ul>
-            <li>Basic registering</li>
-            <li>Adding contacts</li>
-            <li>Updating profile</li>
-        </ul>
-
-        <p>To see what's comming, check our schedule to <a href="#">version 1.0</a></p>
-    </div>
-    <div class="right-column">
-        <div class="right-section">
-            <h3>Talkingz App for Android</h3>
-            <ul>
-                <li>Version: <a href="#">rolling-0.1.0-beta</a></li>
-            </ul>
-        </div>
-        <div class="right-section">
-            <h3>More</h3>
-            <ul>
-                <li><a href="#">The road to version 1.0</a></li>
-                <li><a href="#" target="_blank">Web Talkingz App</a></li>
-                <li><a href="#" target="_blank">Documentation</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-
 </body>
 </html>
