@@ -106,7 +106,8 @@ public class MessagingWSEndpoint {
         logger.debug(" ");
         logger.debug("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         logger.debug("Conexão fechada para o usuário " + userId);
-        logger.debug("Razão:" + reason);
+        logger.debug(reason.toString());
+        logger.debug(reason.getReasonPhrase());
         logger.debug("Total de conexões no momento:" + onlineUsers.size());
         logger.debug(onlineUsers.toString());
         logger.debug("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
@@ -122,6 +123,8 @@ public class MessagingWSEndpoint {
             logger.debug("--------------------------------------------------------------");
             logger.debug("ERRO - para o usuário: "+userId);
             logger.debug(error.getMessage());
+            logger.debug("-----------------------STACK TRACE ---------------------------");
+            error.printStackTrace();
             logger.debug("--------------------------------------------------------------");
             logger.debug(" ");
         }
