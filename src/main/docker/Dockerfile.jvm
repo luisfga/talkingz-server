@@ -27,11 +27,11 @@ ARG JAVA_PACKAGE=java-11-openjdk-headless
 ARG RUN_JAVA_VERSION=1.3.8
 
 #apenas para desenv
-ENV PORT=8080
-ENV DB_USER=javauser
-ENV DB_PASS=Javapass_123
-ENV DB_HOST=localhost
-ENV DATABASE=talkingzappdb
+#ENV PORT=8080
+#ENV DB_USER=javauser
+#ENV DB_PASS=Javapass_123
+#ENV DB_HOST=localhost
+#ENV DATABASE=talkingzappdb
 
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en'
 
