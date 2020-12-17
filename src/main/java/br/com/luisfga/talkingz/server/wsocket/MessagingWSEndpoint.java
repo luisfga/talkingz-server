@@ -118,6 +118,7 @@ public class MessagingWSEndpoint {
 
     @OnError
     public void onError(Throwable error, Session session, @PathParam("userId") String userId) {
+        logger.debug("onError");
         if (!(error instanceof EOFException)) {
             logger.debug(" ");
             logger.debug("--------------------------------------------------------------");

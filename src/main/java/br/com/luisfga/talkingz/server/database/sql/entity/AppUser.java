@@ -19,7 +19,7 @@ public class AppUser {
     private UUID id;
     @Column(name = "user_name")
     private String userName;
-    @Lob
+
     private byte[] thumbnail;
     private String email;
     @Column(name = "join_time")
