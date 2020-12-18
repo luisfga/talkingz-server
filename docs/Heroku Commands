@@ -1,0 +1,2 @@
+- Parar a aplicação/servidor, significa escalar o módulo 'web' para 0 (zero)
+    $ heroku ps:scale web=0 -a talkingz

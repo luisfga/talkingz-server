@@ -1,3 +1,12 @@
 --Windows
 
 É preciso instalar na pasta 'repo' o jar do talkingz-commons a partir do projeto 'talkingz-commons'
+
+OBS:
+
+    1. Ao atualizar o 'repo' é preciso destruir os arquivos no Heroku antes de dar o push.
+        Se não estiver instalado, instalar plugin:
+            $ heroku plugins:install heroku-builds
+
+        Executar o 'purge'
+            $ heroku builds:cache:purge -a appname
