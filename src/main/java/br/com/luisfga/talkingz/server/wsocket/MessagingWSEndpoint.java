@@ -228,7 +228,7 @@ public class MessagingWSEndpoint {
         FeedBackCommandSend feedBackCommandSend = new FeedBackCommandSend();
         feedBackCommandSend.setId(commandSend.getMessageWrapper().getId());
         feedBackCommandSend.setSentTimeInMillis(commandSend.getMessageWrapper().getSentTimeInMilis());
-        logger.debug("FeedBackMessageOnTraffic - ETAPA 2 (uuid:"+ feedBackCommandSend.getId()+")");
+        logger.debug("FeedBackCommandSend - ETAPA 2 (uuid:"+ feedBackCommandSend.getId()+")");
         sendCommandOrFeedBack(feedBackCommandSend, session);
 
         //verificar se usuário destino está online
