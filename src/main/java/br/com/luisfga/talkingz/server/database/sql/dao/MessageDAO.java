@@ -39,6 +39,8 @@ public class MessageDAO {
 
     @Transactional
     public void saveMessage(CommandSend cmdSend){
+        //salvar mensagem (Status: ON_TRAFFIC)
+        logger.debug("Salvando mensagem");
         try {
             Message message = new Message();
 
@@ -73,7 +75,7 @@ public class MessageDAO {
         findPendingMessages.setParameter("statusOnTraffic", MessageStatus.MSG_STATUS_ON_TRAFFIC);
 
         List<Message> msgs = findPendingMessages.getResultList();
-        logger.debug("Usuário com mensagens " + msgs.size()  + " pendentes ");
+        logger.debug("Usuário com " + msgs.size()  + " mensagen(s) pendente(s) ");
 
         msgs.forEach(msg -> {
                 MessageWrapper message = new MessageWrapper();
@@ -86,7 +88,7 @@ public class MessageDAO {
                 message.setMediaThumbnail(msg.getMediaThumbnail());
                 message.setDownloadToken(msg.getMediaDownloadToken());
                 message.setStatus(msg.getMsgStatus());
-                logger.debug("Mensagem pendente encontrada (uuid:"+message.getId()+")");
+                logger.debug("UUID da mensagem pendente:"+message.getId()+")");
                 pendingMessages.add(message);
         });
         return pendingMessages;
@@ -98,7 +100,7 @@ public class MessageDAO {
         findPendingConfirmations.setParameter("senderId", senderId);
         findPendingConfirmations.setParameter("statusDelivered",MessageStatus.MSG_STATUS_DELIVERED);
         List<UUID> pendingConfirmations = findPendingConfirmations.getResultList();
-        logger.debug("Usuário com mensagens " + pendingConfirmations.size()  + " pendentes ");
+        logger.debug("Usuário com " + pendingConfirmations.size()  + " confirmação(ões) pendente(s) ");
         return pendingConfirmations;
     }
 

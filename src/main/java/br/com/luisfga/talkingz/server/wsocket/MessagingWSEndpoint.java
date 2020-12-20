@@ -61,7 +61,7 @@ public class MessagingWSEndpoint {
     private void login(Session session, UUID userId) {
         logger.debug(" ");
         logger.debug("oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
-        logger.debug("Efetuando login (sessão:"+session.getId()+ ")" + " para o usuário: " + userId);
+        logger.debug("Efetuando login para o usuário: " + userId);
         onlineUsers.remove(userId.toString());
         onlineUsers.put(userId.toString(), session);
         usersBuffers.remove(userId.toString());
@@ -222,8 +222,6 @@ public class MessagingWSEndpoint {
         //setar hora da mensagem sincronizada (criada) pelo servidor
         commandSend.getMessageWrapper().setSentTimeInMilis(System.currentTimeMillis());
 
-        //salvar mensagem (Status: ON_TRAFFIC)
-        logger.debug("Salvando mensagem");
         messageDAO.saveMessage(commandSend);
 
         //enviar feedback informando que a mensagem foi salva e retorna UUID e data criada no servidor
