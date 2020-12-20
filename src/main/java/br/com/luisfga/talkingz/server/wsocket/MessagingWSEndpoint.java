@@ -92,10 +92,10 @@ public class MessagingWSEndpoint {
                 + " (Mensagens["+pendingMessages.size()+"] | Confirmações["+pendingConfirmationUUIDs.size()+"])"
                 + "para o usuário:" + userId + " (" + new SimpleDateFormat("HH:mm:ss", new Locale("pt","BR")).format(new Date()) + ")");
 
-            sendCommandOrFeedBack(feedBackCommandLogin, session);                
         } else {
             logger.debug("Usuário " + userId + " sem pendências!");
         }
+        sendCommandOrFeedBack(feedBackCommandLogin, session);//envia feedback tendo pendências ou não
         logger.debug("oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo");
         logger.debug(" ");
         
@@ -225,11 +225,11 @@ public class MessagingWSEndpoint {
         messageDAO.saveMessage(commandSend);
 
         //enviar feedback informando que a mensagem foi salva e retorna UUID e data criada no servidor
-        FeedBackCommandSend feedBackMessageOnTraffic = new FeedBackCommandSend();
-        feedBackMessageOnTraffic.setId(commandSend.getMessageWrapper().getId());
-        feedBackMessageOnTraffic.setSentTimeInMillis(commandSend.getMessageWrapper().getSentTimeInMilis());
-        logger.debug("FeedBackMessageOnTraffic - ETAPA 2 (uuid:"+ feedBackMessageOnTraffic.getId()+")");
-        sendCommandOrFeedBack(feedBackMessageOnTraffic, session);
+        FeedBackCommandSend feedBackCommandSend = new FeedBackCommandSend();
+        feedBackCommandSend.setId(commandSend.getMessageWrapper().getId());
+        feedBackCommandSend.setSentTimeInMillis(commandSend.getMessageWrapper().getSentTimeInMilis());
+        logger.debug("FeedBackMessageOnTraffic - ETAPA 2 (uuid:"+ feedBackCommandSend.getId()+")");
+        sendCommandOrFeedBack(feedBackCommandSend, session);
 
         //verificar se usuário destino está online
         Session destinationSession = onlineUsers.get(commandSend.getMessageWrapper().getDestId());

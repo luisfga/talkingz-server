@@ -19,6 +19,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
@@ -61,7 +62,7 @@ public class MessageDAO {
         /* caso a conexão de um usuário caia após enviar uma mensagem e antes de receber o feedback confirmando que esta foi salva,
            seu app cliente, ao reconectar, tentará enviar a mensagem novamente. E se ela já tiver sido salva realmente, dará erro de chave duplicada.
            Nesse caso basta ignorar e prosseguir com o processo e confirmar o status ON_TRAFFIC*/
-        } catch (EntityExistsException eee){
+        } catch (PersistenceException eee){
             logger.error("Erro ao tentar salvar mensagem. PROVAVELMENTE uma tentativa de salvar uma mensagem repetida.", eee.getMessage());
         }
     }
