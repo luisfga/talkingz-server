@@ -22,6 +22,7 @@ public class Message {
     @Column(name = "sent_time")
     private OffsetDateTime sentTime;
 
+    @Column(columnDefinition = "varchar(1000)")
     private String content;
 
     @Column(name = "mime_type")
